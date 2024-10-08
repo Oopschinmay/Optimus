@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import AboutUs from './components/AboutUs';
@@ -39,12 +40,17 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar title="TextUtils" mode={mode} toggleStyle={toggleStyle} />
+        {/*<Navbar title="TextUtils" mode={mode} toggleStyle={toggleStyle} />*/}
+        <Routes>
+          <Route exact path='/Main' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
+          <Route exact path='/AboutUs' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
+        </Routes>
         <Alert alert={alert} />
         <div className="container my-4">
           <Routes>
-            <Route exact path='/AboutUs' element={<AboutUs mode={mode}></AboutUs>} />
-            <Route exact path='/' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below: " mode={mode}></TextForm>} />
+            <Route exact path='/' element={<Login mode={mode} />} />
+            {<Route exact path='/AboutUs' element={<AboutUs mode={mode}></AboutUs>} />}
+            <Route exact path='/Main' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below: " mode={mode}></TextForm>} />
           </Routes>
         </div>
       </Router>

@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 //import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 
 export default function Navbar(props) {
+    const [isVisible, setIsVisible] = useState(true);
+
+    const handleLogout = () => {
+        // Set visibility to false to hide the span
+        setIsVisible(false);
+        // You can also add your logout logic here (like clearing session, redirecting, etc.)
+        console.log('User logged out');
+    };
     return (
         <>
-            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} to="/Main">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#"></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +23,7 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/Main">Home</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/AboutUs">AboutUs</Link>
@@ -32,9 +40,16 @@ export default function Navbar(props) {
                                 </ul>
                             </li>
                         </ul>
+                        <div>
+                        </div>
                         <div className={`form-check form-switch text-${props.mode === 'dark' ? 'light' : 'dark'}`}>
                             <input className="form-check-input" onClick={props.toggleStyle} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark-Mode</label>
+                        </div>
+                        <div>
+                            {isVisible && (
+                                <span onClick={handleLogout} style={{ cursor: 'pointer', color: 'blue' }}><Link className='mx-2 logout' to="/">Logout</Link></span>
+                            )}
                         </div>
                     </div>
                 </div>
