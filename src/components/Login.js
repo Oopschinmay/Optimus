@@ -28,6 +28,7 @@ export default function Login(props) {
     return (
         <>
             <div className='Cont' style={{ color: props.mode === 'dark' ? 'white' : '#202122' }}>
+                <h1 className='mb-4'>User-Login</h1>
                 <form>
                     <div className="mb-3" >
                         <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
@@ -38,10 +39,10 @@ export default function Login(props) {
                     <div id="passwordHelpBlock" className="form-text">
                         Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                     </div>
-                    <Link className='btnx' to="/Main"><button type="submit" disabled={isButtonDisabled} to="/Main"> Submit </button>
+                    <Link className='btnx' to="/Main"><button type="submit" disabled={isButtonDisabled}> Submit </button>
                     </Link>
                 </form>
-            </div>
+            </div >
         </>
     )
 }
