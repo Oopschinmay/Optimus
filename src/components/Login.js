@@ -27,7 +27,7 @@ export default function Login(props) {
 
     return (
         <>
-            <div className='Cont' style={{ color: props.mode === 'dark' ? 'white' : '#202122' }}>
+            <div className='Cont'>
                 <h1 className='mb-4'>User-Login</h1>
                 <form>
                     <div className="mb-3" >

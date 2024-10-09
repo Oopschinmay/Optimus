@@ -7,7 +7,7 @@ export default function Navbar(props) {
     const [isVisible, setIsVisible] = useState(true);
 
     const handleLogout = () => {
-        // Set visibility to false to hide the span
+        window.location.reload();
         setIsVisible(false);
         // You can also add your logout logic here (like clearing session, redirecting, etc.)
         console.log('User logged out');
