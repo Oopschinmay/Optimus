@@ -25,7 +25,6 @@ export default function ContactMe(props) {
     };
 
 
-
     const handleSubmit = () => {
         const text = document.getElementById("exampleFormControlTextarea1");
         console.log(text.value);
