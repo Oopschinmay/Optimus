@@ -39,7 +39,7 @@ export default function Login(props) {
                     <div id="passwordHelpBlock" className="form-text">
                         Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                     </div>
-                    <Link className='btnx' to="/Main"><button type="submit" disabled={isButtonDisabled}> Submit </button>
+                    <Link className='btnx' to="/main"><button type="submit" disabled={isButtonDisabled}> Submit </button>
                     </Link>
                 </form>
             </div >

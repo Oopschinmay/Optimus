@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs';
 import { useState } from 'react';
 import Alert from './components/Alert';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ContactMe from './components/ContactMe';
 
 
 
@@ -42,15 +43,17 @@ function App() {
       <Router>
         {/*<Navbar title="TextUtils" mode={mode} toggleStyle={toggleStyle} />*/}
         <Routes>
-          <Route exact path='/Main' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
+          <Route exact path='/main' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
           <Route exact path='/AboutUs' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
+          <Route exact path='/ContactMe' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
         </Routes>
         <Alert alert={alert} />
         <div className="container my-4">
           <Routes>
             <Route exact path='/' element={<Login />} />
-            {<Route exact path='/AboutUs' element={<AboutUs mode={mode}></AboutUs>} />}
-            <Route exact path='/Main' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below: " mode={mode}></TextForm>} />
+            <Route exact path='/ContactMe' element={<ContactMe mode={mode}></ContactMe>} />
+            <Route exact path='/AboutUs' element={<AboutUs mode={mode}></AboutUs>} />
+            <Route exact path='/main' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below: " mode={mode}></TextForm>} />
           </Routes>
         </div>
       </Router>
