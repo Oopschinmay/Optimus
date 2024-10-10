@@ -30,7 +30,6 @@ export default function ContactMe(props) {
         console.log(text.value);
         let newTxt = '';
         setTxt(newTxt);
-        showAlert("Copied to clipboard!!", "success");
     }
     return (
         <>
