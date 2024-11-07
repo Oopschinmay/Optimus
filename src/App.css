@@ -26,3 +26,8 @@ nav {
 .form-text {
   margin-bottom: 0.6rem;
 }
+
+.highlie:hover {
+  font-size: larger;
+  color: black;
+}

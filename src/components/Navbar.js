@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Navbar(props) {
+    const [activeTab, setActiveTab] = React.useState('Home');
     const [isVisible, setIsVisible] = useState(true);
 
     const handleLogout = () => {
@@ -14,7 +15,7 @@ export default function Navbar(props) {
     };
     return (
         <>
-            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} to="/Main">
+            <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} to="/Home">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#"></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,14 +23,14 @@ export default function Navbar(props) {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/main">Home</Link>
+                            <li className="nav-item highlie" style={activeTab === 'Home' ? { fontSize: '1.5rem', fontFamily: 'inherit' } : {}}>
+                                <Link className="nav-link active" onClick={() => setActiveTab('Home')} aria-current="page" to="/Home">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/AboutUs">About Us</Link>
+                            <li className="nav-item highlie" style={activeTab === 'About Us' ? { fontSize: '1.5rem', fontFamily: 'inherit' } : {}}>
+                                <Link className="nav-link active" onClick={() => setActiveTab('About Us')} to="/AboutUs">About Us</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/ContactMe">Contact Us</Link>
+                            <li className="nav-item highlie" style={activeTab === 'Contact Us' ? { fontSize: '1.5rem', fontFamily: 'inherit' } : {}}>
+                                <Link className="nav-link active" onClick={() => setActiveTab('Contact Us')} to="/ContactMe">Contact Us</Link>
                             </li>
                         </ul>
                         <div>

@@ -43,7 +43,7 @@ function App() {
       <Router>
         {/*<Navbar title="TextUtils" mode={mode} toggleStyle={toggleStyle} />*/}
         <Routes>
-          <Route exact path='/main' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
+          <Route exact path='/Home' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
           <Route exact path='/AboutUs' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
           <Route exact path='/ContactMe' element={<Navbar title="Textlyzes" mode={mode} toggleStyle={toggleStyle} />} />
         </Routes>
@@ -53,7 +53,7 @@ function App() {
             <Route exact path='/' element={<Login />} />
             <Route exact path='/ContactMe' element={<ContactMe mode={mode}></ContactMe>} />
             <Route exact path='/AboutUs' element={<AboutUs mode={mode}></AboutUs>} />
-            <Route exact path='/main' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below: " mode={mode}></TextForm>} />
+            <Route exact path='/Home' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below: " mode={mode}></TextForm>} />
           </Routes>
         </div>
       </Router>
